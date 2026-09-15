@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Матрицы и формулы</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Перманент</h1>
+
+    <p>
+        Матрицы — это фундаментальный инструмент линейной алгебры.
+        Они используются для решения систем уравнений, преобразований пространства
+        и многих других задач. У матриц так же имеются свои характеристики, например определитель. В данной работе будет рассматриваться свойство, похожее на определитель, которое называется перманентом. 
+    </p>
+
+    <h2>1. Определение матрицы и перманента</h2>
+
+    <p>
+        Матрица - таблица из m строк и n столбцов.
+    </p>
+
+    <p>Пример матрицы размера <strong>3 × 3</strong>:</p>
+
+    <div class="matrix-group">
+        <span class="bracket">[</span>
+        <span class="matrix">
+            <table>
+                <tr>
+                    <td>1</td><td>2</td><td>3</td>
+                </tr>
+                <tr>
+                    <td>4</td><td>5</td><td>6</td>
+                </tr>
+                <tr>
+                    <td>7</td><td>8</td><td>9</td>
+                </tr>
+            </table>
+        </span>
+        <span class="bracket">]</span>
+    </div>
+    <p>
+        Перманентом называют сумму по всем различным перестановкам произведений всех элементов взятых по одному из каждого столбца и из каждой строки. В отличии от определителя, при подсчёте не используется чётность перестановки.
+    Перманент над квадратными матрицами обозначается как per(A), а в общем случае Per(A).
+Так например выглядит нахождение перманента для матрицы 2х2:
+    </p>
+<div class="matrix-group">
+<span class="bracket">[</span>
+    <span class="matrix">
+        <table>
+            <tr><td>a</td><td>b</td></tr>
+            <tr><td>c</td><td>d</td></tr>
+        </table>
+    </span>
+    <span class="bracket">]</span>
+</div>
+<div class="formula">
+    <div style="margin:12px 0; font-size:1.15em; text-align:center; line-height:2.2;">
+        per(A) = ad + bc
+    </div>
+</div>
+
+
+<div class="formula">
+    <span class="label">Общая формула перманента:</span>
+    <div style="margin:10px 0; font-size:1.15em;">
+        per(A) = 
+        <span style="font-size:1.5em;">∑</span>
+        <sub style="font-size:0.85em; margin:0 2px;">σ ∈ S<sub style="font-size:0.9em;">n</sub></sub>
+        <span style="font-size:1.2em; margin:0 5px;">∏</span>
+        <sup style="font-size:0.85em;">n</sup>
+        <sub style="font-size:0.85em;">i=1</sub>
+        a<sub style="font-size:0.9em;">i,σ(i)</sub>
+    </div>
+    <div style="font-size:0.95em; color:#555; border-top:1px solid #d0d8e8; padding-top:10px; margin-top:5px;">
+        где S<sub style="font-size:0.9em;">n</sub> — множество всех перестановок чисел {1, 2, ..., n}, σ(i) - функция, которая ставит в соответствии i строке некоторый столбец σ(i), n - размер матрицы.
+    </div>
+</div>
+
+    <h2>2. Формулы</h2>
+
+<p>
+Для подсчёта перманента можно использовать разные методы вычисления. Результат получится один, но сложность формулы может быть разной. Для особых типов матриц тоже существуют свои формулы вычисления перманента. Здесь представлены основные методы для всех типов матриц.
+</p>
+
+    <div class="formula">
+    <span class="label">Формула перманента основанный на методе включение исключения:</span>
+    <div style="margin:12px 0; font-size:1.15em; text-align:center; line-height:2.2;">
+        per(A) = 
+        <span style="font-size:1.6em;">∑</span>
+        <span style="font-size:1em; vertical-align:sub; margin:0 3px;">
+            S ⊆ {1, …, n}
+        </span>
+        <span style="font-size:1.0em; margin:0 3px;">(</span>
+        <span style="font-size:1.2em;">−</span>
+        <span style="font-size:1em;">1</span>
+        <span style="font-size:1.0em;">)</span>
+        <sup style="font-size:0.9em;">n − |S|</sup>
+        <span style="font-size:1.3em; margin:0 5px;">∏</span>
+        <sup style="font-size:0.9em;">n</sup>
+        <sub style="font-size:0.9em;">i=1</sub>
+        <span style="font-size:1.3em; margin:0 3px;">∑</span>
+        <sub style="font-size:0.9em;">j ∈ S</sub>
+        a<sub style="font-size:0.9em;">ij,</sub>
+    </div>
+<div style="font-size:0.95em; color:#555; border-top:1px solid #d0d8e8; padding-top:10px;">
+        <strong>Обозначения:</strong> S - множество всех перестановок, n - размер матриц, aᵢⱼ - элемент матрицы с индексами i j.
+    </div>
+</div>
+<div class="formula">
+    <span class="label"> Формула Глисона для перманента:</span>
+    <div style="margin:12px 0; font-size:1.15em; text-align:center; line-height:2.2;">
+        per(A) = 
+        <span style="font-size:1em;">1</span>
+        <span style="font-size:1.4em; margin:0 3px;">/</span>
+        <span style="font-size:1em;">2</span>
+        <sup style="font-size:0.9em;">n−1</sup>
+        <span style="font-size:1.6em;">∑</span>
+        <span style="font-size:1em; vertical-align:sub; margin:0 3px;">δ ∈ B</span>
+        <span style="font-size:1.3em; margin:0 3px;">(</span>
+        <span style="font-size:1.4em; vertical-align:middle; margin:0 3px;">∏</span>
+        <sup style="font-size:0.9em;">n</sup>
+        <sub style="font-size:0.9em;">k=1</sub>
+        δ<sub style="font-size:0.95em;">k</sub>
+        <span style="font-size:1.3em;">)</span>
+        <span style="font-size:1.4em; vertical-align:middle; margin:0 8px;">∏</span>
+        <sup style="font-size:0.9em;">n</sup>
+        <sub style="font-size:0.9em;">i=1</sub>
+        <span style="font-size:1.6em; vertical-align:middle; margin:0 3px;">∑</span>
+        <sup style="font-size:0.9em;">n</sup>
+        <sub style="font-size:0.9em;">j=1</sub>
+        δ<sub style="font-size:0.95em;">j</sub>
+        a<sub style="font-size:0.95em;">ij</sub>
+    </div>
+    <div style="font-size:0.95em; color:#555; border-top:1px solid #d0d8e8; padding-top:10px;">
+        <strong>Обозначения:</strong> B = {0, 1}<sup>n</sup> — множество всех бинарных векторов длины n,
+        δ = (δ₁, δ₂, …, δₙ), где каждое δ<sub>k</sub> ∈ {-1, 1}, aᵢⱼ - элемент матрицы с индексами i j.
+    </div>
+</div>
+
+<div class="formula">
+    <span class="label"> Формула Лапласа (разложение по i-й строке):</span>
+    <div style="margin:12px 0; font-size:1.15em; text-align:center; line-height:2.2;">
+        per(A) = 
+        <span style="font-size:1.6em;">∑</span>
+        <sup style="font-size:0.95em;">n</sup>
+        <sub style="font-size:0.95em;">t=1</sub>
+        a<sub style="font-size:1em;">it</sub>
+        <span style="font-size:1em; margin:0 5px;">·</span>
+        per(A(i | t))
+    </div>
+    <div style="font-size:0.95em; color:#555; border-top:1px solid #d0d8e8; padding-top:10px;">
+        <strong>Обозначения:</strong> A(i | t) — матрица, полученная из A вычёркиванием 
+        i-й строки и t-го столбца
+    </div>
+</div>
+<h2> 3. Пример нахождения</h2>
+    <div class="matrix-group">
+        <span class="bracket">[</span>
+        <span class="matrix">
+            <table>
+                <tr>
+                    <td>1</td><td>2</td><td>3</td>
+                </tr>
+                <tr>
+                    <td>4</td><td>5</td><td>6</td>
+                </tr>
+                <tr>
+                    <td>7</td><td>8</td><td>9</td>
+                </tr>
+            </table>
+        </span>
+        <span class="bracket">]</span>
+    </div>
+
+Воспользуемся методом Лапласа, разложим матрицу по первой строке, получим 3 матрицы меньшей размерности:
+
+<div class="matrix-group">
+    <span class="bracket">[</span>
+    <span class="matrix">
+        <table>
+            <tr><td>5</td><td>6</td></tr>
+            <tr><td>8</td><td>9</td></tr>
+        </table>
+    </span>
+    <span class="bracket">]</span>
+
+    <span class="bracket">[</span>
+    <span class="matrix">
+        <table>
+            <tr><td>4</td><td>6</td></tr>
+            <tr><td>7</td><td>9</td></tr>
+        </table>
+    </span>
+    <span class="bracket">]</span>
+
+    <span class="bracket">[</span>
+    <span class="matrix">
+        <table>
+            <tr><td>4</td><td>5</td></tr>
+            <tr><td>6</td><td>8</td></tr>
+        </table>
+    </span>
+    <span class="bracket">]</span>
+</div>
+<p>
+Найдём их перманенты, с помощью формулы для матриц размера 2х2, указанной выше:<br>
+
+    per(первая) = 93;<br>
+    per(вторая) = 78;<br>
+    per(третья) = 62;<br>
+
+Далее умножим на соответствующий элемент, по которому разлагали матрицу и просуммируем:
+<p>
+
+<div class="formula">
+    <div style="margin:12px 0; font-size:1.15em; text-align:center; line-height:2.2;">
+        per(A) = 1 * per(первая) + 2 * per(вторая) + 3 * per(третья) = 1 * 93 + 2 * 78 + 3 * 62 = 435
+    </div>
+</div>
+
+</body>
+</html>

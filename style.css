@@ -1,0 +1,116 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    font-family: 'Segoe UI', 'Georgia', serif;
+    line-height: 1.7;
+    background: #f5f7fa;
+    color: #1a1a2e;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: 700;
+    text-align: center;
+    color: #0b1a33;
+    border-bottom: 4px solid #2c3e8f;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: 600;
+    color: #1a2a5c;
+    border-left: 6px solid #2c3e8f;
+    padding-left: 20px;
+    margin-top: 45px;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+p {
+    font-size: 1.1em;
+    color: #2d2d44;
+    margin: 15px 0;
+}
+
+.matrix {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px 8px;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.matrix table {
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.matrix td {
+    padding: 8px 16px;
+    text-align: center;
+    font-size: 1.15em;
+    font-family: 'Times New Roman', 'Georgia', serif;
+    border: 1px solid #c8ced9;
+    min-width: 40px;
+    background: #ffffff;
+}
+
+.bracket {
+    font-size: 3em;
+    font-weight: 300;
+    color: #2c3e8f;
+    padding: 0 6px;
+    vertical-align: middle;
+    font-family: 'Times New Roman', serif;
+    user-select: none;
+}
+
+
+.matrix-group {
+    background: #ffffff;
+    padding: 25px 20px;
+    border-radius: 14px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+    margin: 25px 0;
+    text-align: center;
+    overflow-x: auto;
+    border: 1px solid #e8ecf1;
+}
+
+.formula {
+    background: #eef3fb;
+    padding: 20px 25px;
+    border-radius: 12px;
+    border-left: 6px solid #2c3e8f;
+    margin: 20px 0;
+    font-size: 1.2em;
+    font-family: 'Times New Roman', 'Georgia', serif;
+    color: #0b1a33;
+    overflow-x: auto;
+}
+
+.formula .label {
+    font-weight: 700;
+    color: #1a2a5c;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.85em;
+    display: block;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
